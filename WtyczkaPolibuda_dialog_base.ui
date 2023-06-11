@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>506</width>
-    <height>614</height>
+    <width>716</width>
+    <height>620</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QDialogButtonBox" name="button_box">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>70</x>
      <y>570</y>
      <width>341</width>
      <height>32</height>
@@ -58,8 +58,8 @@
   <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>140</y>
+     <x>140</x>
+     <y>220</y>
      <width>160</width>
      <height>27</height>
     </rect>
@@ -81,24 +81,50 @@
   <widget class="QPushButton" name="Przycisk2">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>190</y>
+     <x>160</x>
+     <y>30</y>
      <width>161</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
-    <string>show layer name</string>
+    <string>współrzędne punktów</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>360</y>
-     <width>311</width>
-     <height>181</height>
+     <x>40</x>
+     <y>300</y>
+     <width>441</width>
+     <height>251</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Przycisk3">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>30</y>
+     <width>131</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>różnica wyskości</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Przycisk4">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>30</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>pole</string>
    </property>
   </widget>
  </widget>

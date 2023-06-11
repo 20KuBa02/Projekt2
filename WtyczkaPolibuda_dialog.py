@@ -27,6 +27,9 @@ import os
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 
+
+from qgis.core import QgsVectorLayer, QgsMapLayer
+
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'WtyczkaPolibuda_dialog_base.ui'))
@@ -47,6 +50,10 @@ class WtyczkaNaZajeciahDialog(QtWidgets.QDialog, FORM_CLASS):
     
         self.Przycisk2.clicked.connect(self.show_layer_name)
         self.Przycisk2.clicked.connect(self.display_coords)
+        
+        self.Przycisk3.clicked.connect(self.roz_wys)
+        
+        self.Przycisk4.clicked.connect(self.calculate_area)
     
     def display_coords(self):
         selected_featres = self.mMapLayerComboBox.currentLayer().selectedFeatures()
@@ -61,3 +68,52 @@ class WtyczkaNaZajeciahDialog(QtWidgets.QDialog, FORM_CLASS):
     def show_layer_name(self):
         layer_name = self.mMapLayerComboBox.currentLayer().name()
         self.label_2.setText(layer_name)
+        
+    def roz_wys(self):
+        selected_features = self.mMapLayerComboBox.currentLayer().selectedFeatures()
+        if len(selected_features) < 1:
+            QtWidgets.QMessageBox.warning(self, "Błąd", "Wybierz co najmniej 2 punkty.")
+            return
+
+        feature1 = selected_features[0]
+        feature2 = selected_features[1]
+
+        height1 = feature1.attribute("height")
+        height2 = feature2.attribute("height")
+
+        difference = height2 - height1
+
+        QtWidgets.QMessageBox.information(self, "Wynik", f"Różnica wysokości między punktami wynosi: {difference} [m]")
+        
+    import math
+
+    def calculate_area(self):
+        layer = self.mMapLayerComboBox.currentLayer()
+        if not layer or not layer.type() == QgsMapLayer.VectorLayer:
+            QtWidgets.QMessageBox.warning(self, "Błąd", "Wybierz warstwę wektorową.")
+            return
+    
+        selected_features = layer.selectedFeatures()
+        if len(selected_features) < 3:
+            QtWidgets.QMessageBox.warning(self, "Błąd", "Wybierz co najmniej 3 punkty.")
+            return
+    
+        field_area = 0.0
+    
+        # Pobranie współrzędnych zaznaczonych punktów
+        points = [feature.geometry().asPoint() for feature in selected_features]
+    
+        # Sprawdzenie, czy pierwszy i ostatni punkt są takie same (zamknięcie figury)
+        if points[0] != points[-1]:
+            points.append(points[0])  # Dodanie pierwszego punktu na koniec listy
+    
+        # Obliczanie pola na podstawie współrzędnych zaznaczonych punktów (metoda Gaussa)
+        n = len(points)
+        for i in range(n - 1):
+            x1, y1 = points[i]
+            x2, y2 = points[i + 1]
+            field_area += (x1 * y2 - x2 * y1)
+    
+        field_area = abs(field_area) / 2.0
+    
+        QtWidgets.QMessageBox.information(self, "Wynik", f"Pole powierzchni figury wynosi: {field_area} [m2]")

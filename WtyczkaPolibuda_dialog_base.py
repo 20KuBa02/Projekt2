@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_WtyczkaNaZajeciahDialogBase(object):
     def setupUi(self, WtyczkaNaZajeciahDialogBase):
         WtyczkaNaZajeciahDialogBase.setObjectName("WtyczkaNaZajeciahDialogBase")
-        WtyczkaNaZajeciahDialogBase.resize(506, 614)
+        WtyczkaNaZajeciahDialogBase.resize(716, 620)
         self.button_box = QtWidgets.QDialogButtonBox(WtyczkaNaZajeciahDialogBase)
-        self.button_box.setGeometry(QtCore.QRect(80, 570, 341, 32))
+        self.button_box.setGeometry(QtCore.QRect(70, 570, 341, 32))
         self.button_box.setOrientation(QtCore.Qt.Horizontal)
         self.button_box.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.button_box.setObjectName("button_box")
@@ -28,18 +28,24 @@ class Ui_WtyczkaNaZajeciahDialogBase(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.mMapLayerComboBox = QgsMapLayerComboBox(WtyczkaNaZajeciahDialogBase)
-        self.mMapLayerComboBox.setGeometry(QtCore.QRect(270, 140, 160, 27))
+        self.mMapLayerComboBox.setGeometry(QtCore.QRect(140, 220, 160, 27))
         self.mMapLayerComboBox.setObjectName("mMapLayerComboBox")
         self.label_2 = QtWidgets.QLabel(WtyczkaNaZajeciahDialogBase)
         self.label_2.setGeometry(QtCore.QRect(100, 305, 291, 31))
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.Przycisk2 = QtWidgets.QPushButton(WtyczkaNaZajeciahDialogBase)
-        self.Przycisk2.setGeometry(QtCore.QRect(270, 190, 161, 28))
+        self.Przycisk2.setGeometry(QtCore.QRect(160, 30, 161, 28))
         self.Przycisk2.setObjectName("Przycisk2")
         self.textEdit = QtWidgets.QTextEdit(WtyczkaNaZajeciahDialogBase)
-        self.textEdit.setGeometry(QtCore.QRect(110, 360, 311, 181))
+        self.textEdit.setGeometry(QtCore.QRect(40, 300, 441, 251))
         self.textEdit.setObjectName("textEdit")
+        self.Przycisk3 = QtWidgets.QPushButton(WtyczkaNaZajeciahDialogBase)
+        self.Przycisk3.setGeometry(QtCore.QRect(330, 30, 131, 28))
+        self.Przycisk3.setObjectName("Przycisk3")
+        self.Przycisk4 = QtWidgets.QPushButton(WtyczkaNaZajeciahDialogBase)
+        self.Przycisk4.setGeometry(QtCore.QRect(470, 30, 93, 28))
+        self.Przycisk4.setObjectName("Przycisk4")
 
         self.retranslateUi(WtyczkaNaZajeciahDialogBase)
         self.button_box.accepted.connect(WtyczkaNaZajeciahDialogBase.accept) # type: ignore
@@ -50,7 +56,9 @@ class Ui_WtyczkaNaZajeciahDialogBase(object):
         _translate = QtCore.QCoreApplication.translate
         WtyczkaNaZajeciahDialogBase.setWindowTitle(_translate("WtyczkaNaZajeciahDialogBase", "moja wtyczka"))
         self.Przycisk1.setText(_translate("WtyczkaNaZajeciahDialogBase", "policz"))
-        self.Przycisk2.setText(_translate("WtyczkaNaZajeciahDialogBase", "show layer name"))
+        self.Przycisk2.setText(_translate("WtyczkaNaZajeciahDialogBase", "współrzędne punktów"))
+        self.Przycisk3.setText(_translate("WtyczkaNaZajeciahDialogBase", "różnica wyskości"))
+        self.Przycisk4.setText(_translate("WtyczkaNaZajeciahDialogBase", "pole"))
 from qgsmaplayercombobox import QgsMapLayerComboBox
 
 
