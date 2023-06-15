@@ -2,7 +2,7 @@
 WtyczkaNaZajeciahDialog
   Jest to wtyczka dla QGIS, która służy do wykonywania różnych zadań związanych z analizą danych przestrzennych. Wtyczka dostarcza interfejsu graficznego użytkownika (GUI), który umożliwia interakcję z funkcjonalnościami wtyczki.
 
-Instalacja
+# Instalacja
   Aby zainstalować wtyczkę, wykonaj następujące kroki:
 
 Otwórz oprogramowanie QGIS.
@@ -14,7 +14,7 @@ Otwórz oprogramowanie QGIS.
   Wróć do zakładki "Wtyczki" i wyszukaj "WtyczkaNaZajeciah" w pasku wyszukiwania.
   Kliknij nazwę wtyczki, aby ją wybrać, a następnie kliknij przycisk "Zainstaluj", aby zainstalować wtyczkę.
   Po zainstalowaniu, możesz uzyskać dostęp do wtyczki z menu "Wtyczki".
-Korzystanie
+# Korzystanie
   Po zainstalowaniu wtyczki, możesz korzystać z jej funkcji za pośrednictwem interfejsu graficznego użytkownika (GUI) wtyczki. Interfejs graficzny udostępnia kilka przycisków, które wykonują różne zadania:
 
     "policz" - Ten przycisk liczy liczbę wybranych obiektów w bieżącej warstwie i wyświetla liczbę w etykiecie.
