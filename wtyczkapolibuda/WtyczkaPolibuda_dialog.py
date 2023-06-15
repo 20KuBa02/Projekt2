@@ -74,12 +74,15 @@ class WtyczkaNaZajeciahDialog(QtWidgets.QDialog, FORM_CLASS):
         if len(selected_features) < 1:
             QtWidgets.QMessageBox.warning(self, "Błąd", "Wybierz co najmniej 2 punkty.")
             return
+        elif len(selected_features) > 2:
+            QtWidgets.QMessageBox.warning(self, "Błąd", "Za dużo wybranych punktów.Program liczy różnicę dla 2 punktów.")
+            return
 
         feature1 = selected_features[0]
         feature2 = selected_features[1]
 
-        height1 = feature1.attribute("height")
-        height2 = feature2.attribute("height")
+        height1 = feature1.attribute("H_PLEVRF20")
+        height2 = feature2.attribute("H_PLEVRF20")
 
         difference = height2 - height1
 
