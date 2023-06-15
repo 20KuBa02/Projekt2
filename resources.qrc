@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/plugins/WtyczkaPolibuda" >
-        <file>icon.png</file>
-    </qresource>
-</RCC>
